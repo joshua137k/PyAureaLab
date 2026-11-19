@@ -149,7 +149,7 @@ export const MemoryVisualizer: React.FC<MemoryVisualizerProps> = ({
 
   return (
     <div
-      className={`flex flex-1 flex-col overflow-hidden rounded-xl border-2 bg-[#111827] shadow-[0_4px_0_#05070c] transition-colors duration-300 ${frameBorder}`}
+      className={`flex shrink-0 flex-col overflow-hidden rounded-xl border-2 bg-[#111827] shadow-[0_4px_0_#05070c] transition-colors duration-300 ${frameBorder}`}
     >
       {/* ====================================================================
           1. TOP TIMELINE & OPERATION DATA-FLOW GRAPH
@@ -347,7 +347,7 @@ export const MemoryVisualizer: React.FC<MemoryVisualizerProps> = ({
       {/* ====================================================================
           2. LINKED NODES & MEMORY GRAPH WORKBENCH
          ==================================================================== */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="p-4 space-y-4">
         {currentStep ? (
           <>
             {currentStep.scopes.map((scope, sIdx) => {

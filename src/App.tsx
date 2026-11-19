@@ -653,9 +653,9 @@ export function App() {
       </header>
 
       {/* Main Split Workbench */}
-      <main className="grid flex-1 grid-cols-1 gap-3 overflow-hidden p-3 lg:grid-cols-2">
+      <main className="grid min-h-0 flex-1 grid-cols-1 gap-3 overflow-y-auto p-3 lg:grid-cols-2 lg:overflow-hidden">
         {/* Left: Code Editor Panel (No fake Mac dots, clean file tab) */}
-        <section className="flex h-full flex-col overflow-hidden rounded-xl border-2 border-[#05070c] bg-[#111827] shadow-[0_4px_0_#05070c]">
+        <section className="flex min-h-[420px] flex-col overflow-hidden rounded-xl border-2 border-[#05070c] bg-[#111827] shadow-[0_4px_0_#05070c] lg:h-full lg:min-h-0">
           <div className="flex items-center justify-between border-b-2 border-[#05070c] bg-[#162033] px-3.5 py-2">
             <div className="flex items-center gap-2">
               <span className="rounded border-2 border-[#05070c] bg-[#FFD43B] px-2 py-0.5 font-mono text-xs font-black text-[#05070c]">
@@ -712,9 +712,9 @@ export function App() {
         </section>
 
         {/* Right: Challenge + 3D Snake + Memory Bench + Terminal */}
-        <section className="flex h-full flex-col gap-3 overflow-y-auto pr-0.5">
+        <section className="flex flex-col gap-3 pb-4 pr-1 lg:h-full lg:min-h-0 lg:overflow-y-auto">
           {mode === 'track' ? (
-            <div className="rounded-xl border-2 border-[#05070c] bg-[#111827] p-3.5 shadow-[0_3px_0_#05070c]">
+            <div className="shrink-0 rounded-xl border-2 border-[#05070c] bg-[#111827] p-3.5 shadow-[0_3px_0_#05070c]">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
                   <span className="rounded border-2 border-[#05070c] bg-[#3776AB] px-2 py-0.5 font-mono text-xs font-black text-white">
@@ -860,7 +860,7 @@ export function App() {
           />
 
           {/* Tactile Terminal */}
-          <div className="overflow-hidden rounded-xl border-2 border-[#05070c] bg-[#080c14] shadow-[0_3px_0_#05070c]">
+          <div className="shrink-0 overflow-hidden rounded-xl border-2 border-[#05070c] bg-[#080c14] shadow-[0_3px_0_#05070c]">
             <div className="flex items-center justify-between border-b-2 border-[#05070c] bg-[#162033] px-3 py-1.5 text-[11px] font-bold text-slate-300">
               <span>&gt;_ {tr.terminal}</span>
               {mode === 'track' && currentChallenge.testInput.length > 0 && (
