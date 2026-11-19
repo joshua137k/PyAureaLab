@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --py-blue: #3776AB;
+  --py-blue-dark: #234d70;
+  --py-blue-bright: #5AA9E6;
+  --py-gold: #FFD43B;
+  --py-gold-dark: #c9a114;
+  --py-ink: #05070c;
+  --py-bg: #0b101b;
+  --py-panel: #111827;
+  --py-panel-header: #162033;
+  --py-border: #24324d;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--py-bg);
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+}
+
+code,
+pre,
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ============================================================================
+   TACTILE TOON / STUDIO DESIGN SYSTEM (Solid borders, hard comic/keycap depth)
+   ============================================================================ */
+
+.studio-panel {
+  background-color: #111827;
+  border: 2px solid #22304a;
+  box-shadow: 0 4px 0 #050811;
+}
+
+.studio-panel-inset {
+  background-color: #0b101b;
+  border: 2px solid #1c283e;
+}
+
+/* Mechanical Keycap / Tactile Buttons */
+.btn-tactile {
+  border: 2px solid #05070c;
+  box-shadow: 0 3px 0 #05070c;
+  transition: transform 80ms ease, box-shadow 80ms ease, background-color 120ms ease;
+}
+.btn-tactile:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 #05070c;
+}
+.btn-tactile:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #05070c;
+}
+
+.btn-py-blue {
+  background-color: #3776AB;
+  color: #ffffff;
+  border: 2px solid #05070c;
+  box-shadow: 0 3px 0 #05070c, inset 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+.btn-py-blue:hover:not(:disabled) {
+  background-color: #4288c2;
+}
+
+.btn-py-gold {
+  background-color: #FFD43B;
+  color: #05070c;
+  border: 2px solid #05070c;
+  box-shadow: 0 3px 0 #05070c, inset 0 2px 0 rgba(255, 255, 255, 0.45);
+}
+.btn-py-gold:hover:not(:disabled) {
+  background-color: #ffe066;
+}
+
+/* Custom sleek dark scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b101b;
+}
+::-webkit-scrollbar-thumb {
+  background: #24324d;
+  border: 2px solid #0b101b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3776AB;
+}
+
+@media (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: none !important;
+  }
+}
